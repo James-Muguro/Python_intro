@@ -274,3 +274,17 @@ days_remaining = (target_date - today).days
 
 # Print the countdown message
 print(f"Only {days_remaining} day(s) left until {target_date.strftime('%B %d, %Y')}! Adios, guys. It's been real.")
+
+
+# Young's Modulus
+import numpy as np
+
+# Input data
+stress = np.array([100, 200, 300, 500, 700, 800, 1000, 1200, 1500, 1800])   # Stress in MPa
+strain = np.array([0.001, 0.002, 0.003, 0.005, 0.007, 0.008, 0.01, 0.012, 0.015, 0.018])   # Strain
+
+# Calculate Young's modulus
+E = stress / strain
+
+# Print the result
+print(f"Young's modulus = {E.mean()} MPa")
