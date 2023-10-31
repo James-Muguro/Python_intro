@@ -147,3 +147,43 @@ elif num_matches >= 3:
     print(f"\nYou have matched {num_matches} numbers and won a prize!")
 else:
     print("\nHard Luck, you did not match any numbers. Please try again.")
+
+
+# Creating Reservations
+# Create a dictionary to represent the availability of tables
+tables = {
+    "Table 1": False,
+    "Table 2": False,
+    "Table 3": False,
+    "Table 4": False,
+    "Table 5": False
+}
+
+while True:
+    # Display the available tables
+    print("Available tables:")
+    for table, available in tables.items():
+        if not available:
+            print(table)
+    print()
+
+    # Prompt the user to choose a table or quit
+    table_choice = input("Choose a table (or 'q' to quit): ")
+    
+    # Check if the user wants to quit
+    if table_choice.lower() == "q":
+        break
+
+    # Check if the chosen table is valid
+    if table_choice not in tables:
+        print("Invalid choice.")
+        continue
+
+    # Check if the chosen table is available
+    if tables[table_choice]:
+        print("Sorry, that table is not available.")
+        continue
+
+    # Reserve the chosen table
+    tables[table_choice] = True
+    print("Table", table_choice, "has been reserved.")
