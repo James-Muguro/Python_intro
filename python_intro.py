@@ -258,3 +258,19 @@ else:
     # Implement the dare here, e.g., you can print a message for the dare
 
 print("Thanks for playing!")
+
+
+# Days Countdown
+import datetime
+
+# Specify the target date
+target_date = datetime.date(2023, 10, 31)
+
+# Get today's date
+today = datetime.date.today()
+
+# Calculate the number of days until the target date
+days_remaining = (target_date - today).days
+
+# Print the countdown message
+print(f"Only {days_remaining} day(s) left until {target_date.strftime('%B %d, %Y')}! Adios, guys. It's been real.")
