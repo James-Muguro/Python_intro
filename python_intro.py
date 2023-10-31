@@ -288,3 +288,30 @@ E = stress / strain
 
 # Print the result
 print(f"Young's modulus = {E.mean()} MPa")
+
+
+# Collatz
+def collatz(n):
+    # Initialize a list to store the Collatz sequence
+    sequence = [n]
+
+    while n > 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+
+    return sequence
+
+def main():
+    n = int(input("Enter a number: "))
+    print("The Collatz sequence for", n, "is:")
+    result = collatz(n)
+
+    # Print the Collatz sequence
+    for num in result:
+        print(num, end=" -> ")
+
+if __name__ == "__main":
+    main()
