@@ -69,3 +69,34 @@ while True:
         print("Too low! Try again.")
     else:
         print("Too high! Try again.")
+
+
+# Selling Tickets
+# Create an empty list to store ticket information
+tickets = []
+
+while True:
+    print("\n1. Sell Ticket")
+    print("2. Print All Tickets")
+    print("3. Quit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        name = input("Enter the customer's name: ")
+        num_tickets = int(input("Enter the number of tickets: "))
+
+        # Create a dictionary to represent the ticket and add it to the list
+        ticket = {"name": name, "num_tickets": num_tickets}
+        tickets.append(ticket)
+
+        print(f"\nSold {num_tickets} tickets to {name}!")
+    elif choice == 2:
+        print("\nAll Tickets:")
+        for ticket in tickets:
+            print(f"{ticket['name']} - {ticket['num_tickets']} tickets")
+    elif choice == 3:
+        print("\nGoodbye!")
+        break
+    else:
+        print("\nInvalid choice. Please try again.")
