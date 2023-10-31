@@ -187,3 +187,38 @@ while True:
     # Reserve the chosen table
     tables[table_choice] = True
     print("Table", table_choice, "has been reserved.")
+
+
+# Aptitude Test
+# Define the questions and answers as a dictionary
+questions = {
+    "What is the capital of France?": "Paris",
+    "What is the largest country in the world by land area?": "Russia",
+    "What is the currency of Japan?": "Yen",
+    "Who is the president of Kenya?": "William Ruto",
+    "When did Covid-19 begin?": "January 2020",
+    "Which is the largest ocean?": "Pacific",
+    "How many countries does Africa have?": "Fifty four",
+    "Kenyan staple food is?": "Ugali",
+    "Is lesbianism legal in Kenya?": "No",
+    "Which is the biggest company in East Africa": "Safaricom"
+}
+
+# Initialize a variable to keep track of the score
+score = 0
+
+# Ask the questions and evaluate answers
+for question, answer in questions.items():
+    print(question)
+    user_answer = input("Your answer: ")
+
+    # Check if the user's answer matches the correct answer (case-insensitive)
+    if user_answer.lower() == answer.lower():
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect. The correct answer is", answer)
+    print()
+
+# Display the final score
+print("Your score is", score, "out of", len(questions))
