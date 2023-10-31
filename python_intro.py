@@ -100,3 +100,50 @@ while True:
         break
     else:
         print("\nInvalid choice. Please try again.")
+
+
+# Lottery Game
+import random
+
+# Generate a list of 6 random numbers between 1 and 49
+lottery_numbers = random.sample(range(1, 50), 6)
+
+# Prompt the user to enter 6 numbers between 1 and 49
+print("Welcome to the lottery! Please enter 6 numbers between 1 and 49.")
+user_numbers = []
+
+for i in range(6):
+    while True:
+        try:
+            num = int(input(f"Enter number {i+1}: "))
+
+            # Check if the entered number is within the valid range (1 to 49)
+            if num < 1 or num > 49:
+                raise ValueError("Number must be between 1 and 49.")
+            # Check if the entered number has already been chosen
+            elif num in user_numbers:
+                raise ValueError("Number already entered.")
+            break
+        except ValueError as e:
+            print(e)
+    user_numbers.append(num)
+
+# Sort the user's numbers and the lottery numbers
+user_numbers.sort()
+lottery_numbers.sort()
+
+# Print the user's numbers and the lottery numbers
+print(f"\nYour numbers: {user_numbers}")
+print(f"Lottery numbers: {lottery_numbers}")
+
+# Check how many numbers match
+matches = set(user_numbers).intersection(set(lottery_numbers))
+num_matches = len(matches)
+
+# Print the result
+if num_matches == 6:
+    print("\nCongratulations! You have won the jackpot!")
+elif num_matches >= 3:
+    print(f"\nYou have matched {num_matches} numbers and won a prize!")
+else:
+    print("\nHard Luck, you did not match any numbers. Please try again.")
