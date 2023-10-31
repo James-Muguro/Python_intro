@@ -222,3 +222,39 @@ for question, answer in questions.items():
 
 # Display the final score
 print("Your score is", score, "out of", len(questions))
+
+
+# Truth or Dare Game
+import random
+
+# Define the truth and dare prompts as lists
+truth_prompts = [
+    "What is your biggest fear?",
+    "Have you ever lied to your best friend?",
+    "What was the last thing you searched for on your phone?",
+    "What is something you're embarrassed to admit you like?"
+]
+
+dare_prompts = [
+    "Call your crush and confess your love to them (or a random number if you're single)",
+    "Do 20 jumping jacks",
+    "Send a funny meme to your entire contact list",
+    "Sing a song in front of everyone"
+]
+
+# Randomly select a truth or dare prompt
+is_truth = random.choice([True, False])
+prompt = random.choice(truth_prompts if is_truth else dare_prompts)
+
+# Prompt the user to answer the truth or complete the dare
+if is_truth:
+    print("Truth:", prompt)
+    answer = input("Your answer: ")
+    print("Thanks for being honest!")
+else:
+    print("Dare:", prompt)
+    input("Press enter when you're ready...")
+    print("Okay, here we go!")
+    # Implement the dare here, e.g., you can print a message for the dare
+
+print("Thanks for playing!")
