@@ -36,3 +36,14 @@ print(f"Random Element from List: {random_element}")
 # Shuffle the elements in a list
 random.shuffle(my_list)
 print(f"Shuffled List: {my_list}")
+
+
+# Taking Inputs from Users
+# Prompt the user for their name
+name = input("What is your name?: ")
+
+# Prompt the user for their age
+age = input("How old are you?: ")
+
+# Print a greeting with the user's name and age
+print(f"Hello, my name is {name}, and I am {age} years old")
